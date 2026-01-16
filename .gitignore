@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+datagen/__pycache__/
+eval/__pycache__/
+modeling/__pycache__/
+train/__pycache__/
+
+# OS
+.DS_Store
+
+# Experiment artifacts
+runs/
+
+# Plots (optional: keep if you want)
+# *.png
