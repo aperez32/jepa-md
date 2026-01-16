@@ -16,7 +16,7 @@ Once a coherent latent space is learned, physical observables such as energies c
 
 The model is trained using a JEPA-style student–teacher objective with an EMA target network. The training and validation losses decrease rapidly during the early epochs and then plateau smoothly, indicating stable optimization without signs of divergence or severe overfitting.
 
-![Training and validation loss](loss_curve.png)
+![Training and validation loss](results/loss_curve.png)
 
 Notably, the validation loss closely tracks the training loss throughout training, suggesting that the learned latent representations generalize across independently generated trajectories rather than memorizing specific dynamics.
 
@@ -26,7 +26,7 @@ Notably, the validation loss closely tracks the training loss throughout trainin
 
 To probe the structure of the learned latent space, node-level latent embeddings are projected into two dimensions using Principal Component Analysis (PCA) and colored by timestep.
 
-![PCA of latent embeddings](pca_latents.png)
+![PCA of latent embeddings](results/pca_latents.png)
 
 Despite PCA being a strictly linear projection, the latent embeddings exhibit nontrivial geometric structure with smooth temporal progression. This indicates that dominant variance directions in the latent space align with meaningful dynamical modes, rather than collapsing into an unstructured cloud.
 
@@ -36,7 +36,7 @@ Despite PCA being a strictly linear projection, the latent embeddings exhibit no
 
 A nonlinear projection using UMAP further reveals the organization of the latent space.
 
-![UMAP of latent embeddings](umap_latents.png)
+![UMAP of latent embeddings](results/umap_latents.png)
 
 The UMAP embedding shows clear low-dimensional manifolds with smooth color gradients. These features suggest that the model has learned a coherent latent phase space in which temporal evolution corresponds to continuous motion along structured trajectories.
 
