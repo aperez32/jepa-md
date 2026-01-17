@@ -36,10 +36,9 @@ Despite PCA being a strictly linear projection, the latent embeddings exhibit no
 
 A nonlinear projection using UMAP further reveals the organization of the latent space.
 
-
 <p align="center">
-  <img src="assets/show1/umap_latents.png" width="45%" />
-  <img src="assets/show2/umap_latents.png" width="45%" />
+  <img src="assets/show1/umap_latents.png" width="49%" />
+  <img src="assets/show2/umap_latents.png" width="49%" />
 </p>
 
 The UMAP embedding shows clear low-dimensional manifolds with smooth color gradients. These features suggest that the model has learned a coherent latent phase space in which temporal evolution corresponds to continuous motion along structured trajectories.
