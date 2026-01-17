@@ -8,6 +8,7 @@ import os
 
 from config import cfg, contextcfg, predcfg
 from datagen.generate_data import main as datagen_main
+from datagen.animate import animate
 from train.train import main as train_main
 from eval.eval import main as eval_main
 
@@ -49,6 +50,14 @@ def main():
     datagen_main(cfg_, cfg_.seed_train, out_dir=out_dir, is_train=True)
 
     datagen_main(cfg_, cfg_.seed_val, out_dir=out_dir, is_train=False)
+
+    animate_ = True
+    train = True
+    if animate_ and train:
+        animate(cfg_, out_dir, train)
+    elif animate_ and not train:
+        animate(cfg_, out_dir, train)
+
     
     os.mkdir(f'{out_dir}/checkpoints')
 

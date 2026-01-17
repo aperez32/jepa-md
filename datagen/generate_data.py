@@ -56,10 +56,10 @@ def main(cfg, seed, out_dir, is_train=True):
     num_steps = cfg.num_steps
     fname = cfg.train_fname if is_train else cfg.val_fname
 
-    mass = 1.0
-    kT = 5.0
-    sigma = 1.0
-    epsilon = 1.0
+    mass = cfg.mass
+    kT = cfg.kT
+    sigma = cfg.sigma
+    epsilon = cfg.epsilon
 
     displacement, shift = space.periodic(box_size)
 
@@ -103,12 +103,12 @@ def main(cfg, seed, out_dir, is_train=True):
     x_axis = range(cfg.num_steps)
 
 
-    plt.plot(x_axis, total_energy, label="total energy")
-    plt.plot(x_axis, KE, label="kinetic energy")
-    plt.plot(x_axis, PE, label="potential energy")
+    # plt.plot(x_axis, total_energy, label="total energy")
+    # plt.plot(x_axis, KE, label="kinetic energy")
+    # plt.plot(x_axis, PE, label="potential energy")
 
-    plt.legend()
-    plt.show()
+    # plt.legend()
+    # plt.show()
     if is_train:
         return f'{out_dir}/{cfg.train_fname}'
     else:

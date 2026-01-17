@@ -3,9 +3,9 @@ from dataclasses import dataclass
 @dataclass
 class cfg:
 
-    run_readme: str = "Reduced particles and steps"
+    run_readme: str = "decreases distance to energy minimum"
     # Datagen
-    N: int = 16
+    N: int = 32
     dim: int = 2
     box_size: float = 10.0
     dt: float = 1e-3
@@ -18,6 +18,9 @@ class cfg:
 
 
     mass: float = 1.0
+    kT: float = 10.0
+    sigma: float = 0.5
+    epsilon: float = 1.0
 
     # Training
     lr: float = 5e-5
@@ -38,7 +41,7 @@ class contextcfg:
     h_dim: int = 96
     msg_dim: int = 96
     hidden_dim: int = 192
-    n_layers: int = 3
+    n_layers: int = 2
     mlp_depth: int = 2
     out_dim: int = 96
 
@@ -48,6 +51,6 @@ class predcfg:
     h_dim: int = 96 #same as teacher/stu
     msg_dim: int = 96
     hidden_dim: int = 192
-    n_layers: int = 2
+    n_layers: int = 1
     mlp_depth: int = 2
     out_dim: int = 96
